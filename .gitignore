@@ -1,1 +1,3 @@
-__pycache__
+echo "YoGoKoBox/lib/systemd/" >> .gitignore
+echo "YoGoKoBox/lib/systemd/system.conf.d/.gitignore" >> .gitignore
+echo "YoGoKoBox/lib/systemd/journald.conf.d/.gitignore" >> .gitignore
