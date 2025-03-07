@@ -1,7 +1,0 @@
-__pycache__
-./BevFormer
-./mmdetect3d
-./RosBagDocker
-./YoGoKoBox
-
-./run_iris_singularity_data_preparation_cv2x_vnc2024.sh
