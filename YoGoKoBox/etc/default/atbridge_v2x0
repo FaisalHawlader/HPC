@@ -1,0 +1,27 @@
+# Settings for atbridge, bridge to v2x platforme on threadx
+# Listening interface
+INTERFACE="v2x0"
+
+# Choir server
+TARGET="169.254.2.2"
+
+# message id
+TX_PORT=501
+RX_PORT=500
+
+# application id
+CACHE_APPLICATION_ID=1168
+
+# Default Power dbm 
+POWER_DBM=23
+
+
+#Cache id
+CACHE_ID=30
+
+#Object id 
+OBJECT_ID=1
+
+#power dbm cache entry
+DB_CACHE_ENTRY="tx_v2x0_power_dbm"
+

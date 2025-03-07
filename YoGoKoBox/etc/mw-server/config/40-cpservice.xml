@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		CpService
+		Provides support for ETSI CPM messaging
+	-->
+	<service start="true" instance="0">CpService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub senderid="161" handlerid="171" outcpm="122" incpm="132" owncpm="142" configcpm="152"/>
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache vdpcacheid="0"/>
+
+		<!-- Parameters for the itssocket mechanism (reasonable defaults) -->
+		<!-- <socket receiver="gn+btp://cch:2001" sender="gn+btp://cch:2001" /> -->
+		<!-- <socket receiver="gn+btp://cch:2001" sender="ip6+udp://[::1]:1234?reconnect=1" /> -->
+		<!-- <socket url="ip6+udp://[::1]:1234?reconnect=1" /> -->
+		<socket cpm="gn+btp://cch:2011" />
+
+		<!-- Specific configuration for cpm protocol (reasonable defaults) -->
+		<cpmparameters messageid="14"/>
+
+		<!-- Standard reference and version to use -->
+		<standard reference="ETSI_TR_103562" version="2.1.1" />
+
+		<!-- Generation control parameters
+			generationcontrol: Whether the CpService should control
+			    generation frequency of CPM messages
+			genmaxinterval: Maximum generation interval of CPM messages (ms)
+			genmininterval: Minimum generation interval of CPM messages (ms)
+			genminintervaldcc: Minimum DCC generation interval of CPM
+			    messages (ms)
+			genintervalsi : Minimum interval for inclusion of the
+			    SensorInformation in sent CPM (ms)
+		-->
+		<sendcontrol generationcontrol="true"
+		             genmaxinterval="1000"
+		             genmininterval="100"
+		             genminintervaldcc="100"
+								 sensorinformationcontrol="true"
+								 genintervalsi="1000" />
+
+
+		<!-- Reception control parameters
+			dropownmsgs: Whether the CpService should drop its own messages
+			    on reception
+		-->
+		<recvcontrol dropownmsgs="false"/>
+
+		<!-- Security control parameters
+			signmessages: Whether sent CPM messages should be signed
+			securitycontrol: Whether the security service should control
+			    (lock) emission of CPM messages
+			aid: AID of CPM messages for sent and received messages
+		-->
+		<securityparameters signmessages="false"
+		                    securitycontrol="false"
+		                    aid="36" />
+
+		<!-- RSU Container parameters
+			type: type of the RSU container (intersection or roadsegment)
+			id: the IntersectionID or the RoadSegmentID depending on the type
+			region: the RoadRegulatorID (optional)
+		-->
+		<originatingRSUcontainer type="roadsegment"
+														 id="123"
+														 region="456" />
+
+
+		<!-- Sensor Information Container parameters
+			sensorid: identifier of the sensor.
+			type: SensorType of itu-t (0) identified-organization (4) etsi (0) itsDomain (5) wg1 (1) tr (103562) cpm (1) version (1)
+			freespaceconfidence: (optionnal) FreeSpaceConfidence of itu-t (0) identified-organization (4) etsi (0) itsDomain (5) wg1 (1) tr (103562) cpm (1) version (1)
+			detectionareatype: area type (stationarySensorCircular, stationarySensorRectangle)
+			relnodeoffsetxy: (optionnal) relative offset of the sensor center (cm) with the format : "x;y"
+			radius: if type is stationarySensorCircular
+			semimajorrangelength: if type is stationarySensorRectangle
+			semiminorrangelength: if type is stationarySensorRectangle
+			semimajorrangeorientation: if type is stationarySensorRectangle
+			semiheight: (optionnal) if type is stationarySensorRectangle
+		-->
+		<sensor1 sensorid="111"
+						 type="1"
+						 freespaceconfidence="52"
+						 detectionareatype="stationarySensorCircular"
+						 radius="256"
+						 relnodeoffsetxy="-800;1051" />
+
+		<sensor2 sensorid="222"
+						 type="1"
+						 detectionareatype="stationarySensorRectangle"
+						 semimajorrangelength="1234"
+						 semiminorrangelength="4321"
+						 semimajorrangeorientation="3247"
+						 semiheight="2233"
+						 relnodeoffsetxy="-13;114" />
+
+		<!-- number of sensors -->
+		<sensors count="2"/>
+
+
+
+	</config>
+</configuration>

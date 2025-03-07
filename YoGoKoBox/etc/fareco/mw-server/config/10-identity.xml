@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">IdentityManager</service>
+	<config>
+
+		<!-- Message Id for choir protocol
+		     Note: The identitycacheid entry must not be set to the same value as the
+		     choir.securitycacheid MIB entry from the SecurityClient service. Such a
+		     situation would lead to an interlocking -->
+		<choir applicationid="10" identitycacheid="0" />
+
+		<!-- Station identity parameters and configuration
+		     stationid: Manually defined station id of the station (default is random)
+		     stationtype: Station type of the station
+		     idchangeenabled: Whether or not Station ID change is allowed
+		-->
+		<identity 
+		          stationtype="5"
+		          idchangeenabled="true" />
+
+		<!-- Security configuration
+		     enabled: Whether or not security is enabled
+		     signmessages: Whether or not outgoing messages should be signed
+		-->
+		<security enabled="false"
+		          signmessages="true" />
+
+	</config>
+</configuration>

@@ -1,0 +1,19 @@
+[Unit]
+Description=Bind mount persistent /etc/systemd/journal-upload.conf.d/10-url.conf
+DefaultDependencies=false
+Before=local-fs.target
+After=data.mount
+RequiresMountsFor=/data /etc/systemd/journal-upload.conf.d
+ConditionPathIsReadWrite=/data
+ConditionPathExists=/etc/systemd/journal-upload.conf.d/10-url.conf
+ConditionPathIsReadWrite=!/etc/systemd/journal-upload.conf.d/10-url.conf
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /data/etc_systemd_journal-upload.conf.d_10-url.conf /etc/systemd/journal-upload.conf.d/10-url.conf
+ExecStop=/bin/umount /etc/systemd/journal-upload.conf.d/10-url.conf
+
+[Install]
+WantedBy=local-fs.target

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">PathHistoryManager</service>
+	<config>
+		<!-- Message Id for choir protocol-->
+		<choir applicationid="21"
+		       vdpcacheid="0"
+		       pathhistorycacheid="9" />
+
+		<!-- Path History parameters (see DOT HS 811 492B, Appendix B-2) -->
+		<pathhistory maxsize="50"
+		             allowableerror="0.47"
+		             chordlengththreshold="22.5"
+		             maxextimatedradius="63781370"
+		             smalldeltaphi="1"
+		             mindistance="0" />
+	</config>
+</configuration>
+

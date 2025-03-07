@@ -1,0 +1,19 @@
+[Unit]
+Description=Bind mount persistent /etc/fareco
+DefaultDependencies=false
+Before=local-fs.target
+After=data.mount
+RequiresMountsFor=/data /etc
+ConditionPathIsReadWrite=/data
+ConditionPathExists=/etc/fareco
+ConditionPathIsReadWrite=!/etc/fareco
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /data/etc_fareco /etc/fareco
+ExecStop=/bin/umount /etc/fareco
+
+[Install]
+WantedBy=local-fs.target

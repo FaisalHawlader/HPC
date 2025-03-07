@@ -1,0 +1,4 @@
+<map id="fr.yogoko.choir.api.exception.ChoirProtocolException" name="fr.yogoko.choir.api.exception.ChoirProtocolException">
+<area shape="rect" id="node3" href="$classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirAlreadyConnectedException.html" title="fr.yogoko.choir.internals.ipc.exceptions.\lChoirAlreadyConnectedException" alt="" coords="405,5,677,47"/>
+<area shape="rect" id="node4" href="$classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirServerConnectionException.html" title="fr.yogoko.choir.internals.ipc.exceptions.\lChoirServerConnectionException" alt="" coords="405,71,677,112"/>
+</map>

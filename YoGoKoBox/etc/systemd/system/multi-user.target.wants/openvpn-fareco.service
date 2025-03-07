@@ -1,0 +1,14 @@
+[Unit]
+Description=Client Fareco de openvpn
+After=NetworkManager.service
+Requires=NetworkManager.service
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/fareco/openvpn/
+ExecStart=/usr/sbin/openvpn --config client.ovpn
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">SecurityClient</service>
+	<config>
+
+		<!-- Message Id for choir protocol
+		     Note: The securitycacheid entry must not be set to the same value as the
+		     choir.identitycacheid MIB entry from the IdentityManager service. Such a
+		     situation would lead to an interlocking. -->
+		<choir applicationid="11" securitycacheid="3" securitymsgid="170" />
+
+	</config>
+</configuration>

@@ -1,0 +1,5 @@
+<map id="fr.yogoko.choir.lib.v2x.gdd.DestinationPlaceDestBlob" name="fr.yogoko.choir.lib.v2x.gdd.DestinationPlaceDestBlob">
+<area shape="rect" id="node2" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1asn1_1_1Asn1OctetStringImpl.html" title="fr.yogoko.choir.lib.asn1.\lAsn1OctetStringImpl" alt="" coords="15,184,186,225"/>
+<area shape="rect" id="node3" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1asn1_1_1Asn1OctetString.html" title="fr.yogoko.choir.lib.asn1.\lAsn1OctetString" alt="" coords="15,95,186,136"/>
+<area shape="rect" id="node4" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1asn1_1_1ASN1Component.html" title="fr.yogoko.choir.lib.asn1.\lASN1Component" alt="" coords="15,5,186,47"/>
+</map>

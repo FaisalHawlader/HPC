@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">AutotalksCr2Gnss</service>
+	<config>
+		<!-- GNSS provider parameters
+			enabled: Enable the position provider thread (0=disabled, 1=enabled)
+			appid: Choir application ID to connect to the middleware
+			messageid: Choir message ID to publish positions to
+			frequency: Frequency to sense and send positions fixs (in ms)
+			mmcx: Not relevant for Craton 2
+		-->
+		<positionprovider enabled="1"
+		                  appid="124"
+		                  messageid="201"
+		                  frequency="100" />
+	</config>
+</configuration>

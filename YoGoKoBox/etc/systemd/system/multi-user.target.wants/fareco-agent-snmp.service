@@ -1,0 +1,14 @@
+[Unit] 
+Description=Agent snmp a installer sur les machines fareco 
+After=snmpd.service 
+Requires=snmpd.service
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/fareco/fareco-agent-snmp/
+ExecStart=/usr/bin/fareco-agent 705
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

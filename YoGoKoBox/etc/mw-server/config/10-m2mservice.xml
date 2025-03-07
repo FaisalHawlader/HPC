@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="false" instance="0">M2MService</service>
+	<config>
+		<!-- Enable MQTT protocol handler -->
+		<mqtt enabled="true" />
+
+		<!-- List of servers (starting from 1)
+			alias: Alias for this mqtt service (classically the same as address).
+			    The alias is used to match the server entry to use. If a hostname
+			    in the mqtt:// url matches a declared server alias, the corresponding
+			    line is used.
+			address: Hostname or IP(v4/v6) address to connect to
+			port: TCP port to connect to
+			tls: Whether TLS should or should not be enabled, TLS v1.0, v1.1 and v1.2
+			    are supported. The target server must have a valid certificate. The
+			    server's certificate must be signed by a certificate authority
+			    registered in the operating system trusted CA list.
+			    On Debian, the CA must be added in /usr/local/share/ca-certificates/
+			    then the command update-ca-certificates must be called.
+			username: Define the username to use to authenticate to the server
+			password: Define the password to use to authenticate to the server
+			clientid: Client Id to use in MQTT connection
+			sslprotocol: SSL protocols to use for the connection to the server.
+			    Accepted values are "TLSv1", "TLSv1.1" and "TLSv1.2". If not specified,
+			    the connection will use either TLS 1.0, 1.1 or 1.2 protocols. Should be
+			    let to the default value.
+			sslciphers: Space-separated list of cipher suites to use. Ciphers suites
+			    must be provided as understood by Java. Should be let the default value.
+			    See http://docs.oracle.com/javase/7/docs/technotes/guides/security/SunProviders.html
+			sslclientcert: Path to the client certificate+key, in the PKCS12 format.
+			sslpassword: Password used to protect the PKCS12 store. Omit if no password.
+		-->
+		<mqtt_servers count="1" />
+
+		<mqtt_server1 alias="MQTT_Broker"
+					  address="127.0.0.1"
+					  port="8883"
+					  tls="true"
+					  username="username"
+					  password="password"
+					  clientid="testClient"
+					  sslclientcert="/path/to/the/certificate"
+					  sslpassword="password"/>
+
+		<amqp_servers count="1" />
+
+		<amqp_server1 alias="AMQP_Broker"
+					  address="127.0.0.1"
+					  virtualhost="/"
+					  port="5671"
+					  username="guest"
+					  password="guest"
+					  tls="true"
+					  clientcertpath="/path/to/the/certificate"
+					  clientcertpassword="passwordcertificate"
+					  truststorepath="/path/to/the/truststore"
+					  truststorepassword="passwordtruststore"
+					  exchangesCount="1"
+					  exchange1.name="testExchange"
+					  exchange1.type="topic"
+					  exchange1.durable="true" />
+
+		<ws_servers count="1" />
+
+		<ws_server1 alias="wsEchoServer"
+					address="127.0.0.1"
+					port="8081"
+					tls="true"
+					path="/path/to/ws" />
+
+	</config>
+</configuration>

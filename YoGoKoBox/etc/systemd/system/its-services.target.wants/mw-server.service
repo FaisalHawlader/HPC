@@ -1,0 +1,15 @@
+[Unit]
+Description=YoGoKo Middleware
+After=network.target remote-fs.target nss-lookup.target its-services-pre.target
+Requires=its-services-pre.target
+PartOf=its-services.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/mw-server/
+ExecStart=/usr/bin/java -jar /usr/bin/middleware-server.jar
+Restart=always
+SyslogIdentifier=mw-server
+
+[Install]
+WantedBy=its-services.target

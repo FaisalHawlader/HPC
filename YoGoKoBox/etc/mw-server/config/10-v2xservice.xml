@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		V2X service
+		Register handlers for GN and IPv6 protocols
+	-->
+	<service start="true" instance="0">V2XService</service>
+	<config>
+		<!-- Enable IPv6 protocol handler (reasonable defaults) -->
+		<ipv6 enabled="true" />
+
+		<!-- mwtun GN protocol handler (reasonable defaults) -->
+		<!-- <mwtun1 channel="cch" iface="tun0" group="ff02::1234" header="true" /> -->
+
+		<!--  Enable choirgn (reasonable defaults) -->
+		<choiritsnet1 channel="cch" appid="83" sendmsgid="12" recvmsgid="11" />
+	</config>
+</configuration>
+

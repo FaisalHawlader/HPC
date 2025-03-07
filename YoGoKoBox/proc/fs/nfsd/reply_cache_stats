@@ -1,0 +1,10 @@
+max entries:           64256
+num entries:           0
+hash buckets:          1024
+mem usage:             0
+cache hits:            0
+cache misses:          0
+not cached:            96
+payload misses:        0
+longest chain len:     0
+cachesize at longest:  0

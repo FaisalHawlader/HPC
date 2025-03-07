@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		DenService
+		Provides support for ETSI DENM messaging
+	-->
+	<service start="true" instance="0">DenService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub senderid="91" receiverid="92" handlerid="93"
+		        indenm="45" outdenm="35" owndenm="65" triggerdenm="25" answerdenm="55" />
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache originating="2" receiving="21" forward="22"/>
+
+		<!-- Parameters for DENM emission through LTE-V2X media
+			* enable : Whether the LTE-V2X media should be use for DENM emission.
+			* msgtype : The string that identifies the ITS message type for LTE-V2X emission. This string can be used
+			    for example in the MQTT topic if MQTT protocol is used for the LTE-V2X emission.
+			* repetitionthreshold : This attribute only concerns the repetition of a given DENM. A DENM must be repeated
+			    through LTE-V2X media if the last occurrence of the DENM that has been sent through LTE V2X exceeds
+			    repetitionthreshold value (in seconds) -->
+		<ltev2x enable="false" msgtype="denm" repetitionthreshold="540" />
+
+		<!-- Parameters for the itssocket mechanism (reasonable defaults) -->
+		<!-- <socket receiver="gn+btp://cch:2002" sender="gn+btp://cch:2002" /> -->
+		<socket denm="gn+btp://cch:2002" />
+
+		<!-- Standard reference and version to use -->
+		<!-- <standard reference="ETSI_EN_302637-3" version="1.2.2" /> -->
+		<standard reference="ETSI_EN_302637-3" version="1.3.1" />
+
+
+		<!-- Reception control parameters
+			dropownmsgs: Whether the DenService should drop its own messages
+			    on reception
+			controlmsgs: Whether the DenService should check messages on
+			    reception
+		-->
+		<recvcontrol dropownmsgs="false"
+		             controlmsgs="true"
+		             droprepetition="true"/>
+
+		<!-- Security control parameters
+			signmessages: Whether sent DENM messages should be signed
+			securitycontrol: Whether the security service should control
+			    (lock) emission of DENM messages
+			aid: AID of DENM messages for sent and received messages
+		-->
+		<securityparameters signmessages="false"
+		                    securitycontrol="false"
+		                    aid="37"/>
+
+		<!-- DENM Keep-alive forwarding
+			value: Enable DENM Keep-alive forwarding
+		-->
+		<forwarding value="false"/>
+
+		<!-- Generation control parameters
+			enabled: Lock station id during DENM emission
+		-->
+		<sendcontrol lockid="false"/>
+
+		<!-- triggering forcing
+			forceactionid: Allow applications to force their own ActionID in
+			    DENM triggers
+			forcereferencetime: Allow application to force their own referenceTime in
+			    DENM triggers
+			forcestationtype: Allow application to force their own stationType in
+			    DENM triggers
+		-->
+		<triggering forceactionid="false"
+			          forcereferencetime="false"
+			          forcestationtype="false"
+			          randomsequencenumber="false"/>/>
+
+		<!-- DENM auto-update
+			enabled: Automatically update DENMs close to expiration
+		-->
+		<autoupdate enabled="false"/>
+	</config>
+</configuration>

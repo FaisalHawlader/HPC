@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		M2MAdapter
+		Establish a binding between pubsub or cache and itssockets.
+		This service may be used to collect data to cloud and receive
+	        data from cloud.
+	-->
+	<service start="false" instance="0">M2MCollector</service>
+	<config>
+		<!-- List of M2M pubsub receivers (starting from 1)
+		 	server: server (host or host:port) to receive from. If it matches an alias
+			    listed in 10-m2mservice.xml, the corresponding server information will
+			    be used.
+			topic: MQTT topic filter to receive from (may use MQTT wildcards)
+			publish: pubsub message id to publish to
+		-->
+		<receivers count="0"/>
+		<!--
+		<receiver1 server="localhost"
+		           topic="test/receiving"
+		           publish="20001" />
+		-->
+
+		<!-- List of M2M pubsub senders (starting from 1)
+		 	server: server (host or host:port) to collect to. If it matches an alias
+			    listed in 10-m2mservice.xml, the corresponding server information will
+			    be used.
+			topic: MQTT topic to send messages to
+			subscribe: pubsub message id to subscribe to
+			appid: application id to use
+		-->
+		<senders count="0" />
+		<!--
+		<sender1 server="localhost"
+		         topic="test/sending"
+		         subscribe="22"
+		         appid="20001" />
+		-->
+
+		<!-- List of M2M cache synchronizers (starting from 1)
+		 	server: server (host or host:port) to collect to. If it matches an alias
+			    listed in 10-m2mservice.xml, the corresponding server information will
+			    be used.
+			topicin: MQTT topic to receive cache updates from
+			topicout: MQTT topic to send cache updates to
+			cacheid: cache id to synchronize
+			objectid: object id to synchronize (wildcard is not supported yet)
+			appid: application id to use
+			frequency: delay between each sent cache update, if not provided, the
+			    cache will be sent at each update (ms)
+		-->
+		<cachesyncs count="0" />
+		<!--
+		<cachesync1 server="localhost"
+		            topicin="stations/client-mqtt/vdp/in"
+		            topicout="stations/client-mqtt/vdp/out"
+		            cacheid="0"
+		            objectid="1"
+		            appid="20002"
+		            frequency="1000" />
+		-->
+	</config>
+</configuration>

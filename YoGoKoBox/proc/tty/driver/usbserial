@@ -1,0 +1,6 @@
+usbserinfo:1.0 driver:2.0
+0: module:option name:"GSM modem (1-port)" vendor:1e0e product:9001 num_ports:1 port:0 path:usb-ci_hdrc.1-1.2
+1: module:option name:"GSM modem (1-port)" vendor:1e0e product:9001 num_ports:1 port:0 path:usb-ci_hdrc.1-1.2
+2: module:option name:"GSM modem (1-port)" vendor:1e0e product:9001 num_ports:1 port:0 path:usb-ci_hdrc.1-1.2
+3: module:option name:"GSM modem (1-port)" vendor:1e0e product:9001 num_ports:1 port:0 path:usb-ci_hdrc.1-1.2
+4: module:option name:"GSM modem (1-port)" vendor:1e0e product:9001 num_ports:1 port:0 path:usb-ci_hdrc.1-1.2

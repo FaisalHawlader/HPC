@@ -1,0 +1,3 @@
+N: Number=0 Name=rfkill
+N: Number=1 Name=kbd
+N: Number=2 Name=leds

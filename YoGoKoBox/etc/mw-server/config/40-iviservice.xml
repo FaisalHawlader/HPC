@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		IviService
+		Provides support for ETSI IVIM messaging
+	-->
+	<service start="true" instance="0">IviService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub senderid="107" receiverid="108" handlerid="97"
+		        inivi="37" outivi="47" ownivi="67" triggerivi="27" answerivi="57" />
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache originating="4" receiving="41" stationPropertiesId="3" />
+
+		<!-- Parameters for DENM emission through LTE-V2X media
+			* enable : Whether the LTE-V2X media should be use for DENM emission.
+			* msgtype : The string that identifies the ITS message type for LTE-V2X emission. This string can be used
+				for example in the MQTT topic if MQTT protocol is used for the LTE-V2X emission. -->
+		<ltev2x enable="false" msgtype="ivi" />
+
+		<!-- Standard reference and version to use -->
+		<standard reference="ETSI_TS_103301" version="2.1.1" />
+		<!-- <standard reference="ETSI_TS_103301" version="1.1.1" /> -->
+
+		<!-- Reception control parameters
+			dropownmsgs: Whether the IviService should drop its own messages
+			    on reception
+			controlmsgs: Whether the IviService should check messages on
+			    reception
+		-->
+		<recvcontrol dropownmsgs="true"
+		             controlmsgs="false"/>
+
+		<!-- Security control parameters
+			signmessages: Whether sent IVIM messages should be signed
+			securitycontrol: Whether the security service should control
+			    (lock) emission of IVIM messages
+			aid: AID of IVIM messages for sent and received messages
+		-->
+		<securityparameters signmessages="false"
+		                    securitycontrol="false"
+		                    aid="139" />
+
+		<!-- IVIM auto-update
+			enabled: Automatically update IVIMs close to expiration
+		-->
+		<autoupdate enabled="false"/>
+	</config>
+</configuration>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		SpatService
+		Provides support for ETSI SPATEM and MAPEM messaging
+	-->
+	<service start="true" instance="0">SpatService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub spatsenderid="71" spatreceiverid="72" spathandlerid="73" mapsenderid="81" mapreceiverid="82"
+		        inspat="24" outspat="34" ownspat="44" configspat="54" inmap="23" outmap="33" ownmap="43" />
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache id="2"/>
+
+		<!-- Parameters for DENM emission through LTE-V2X media
+			* enable : Whether the LTE-V2X media should be use for DENM emission.
+			* spatmsgtype : The string that identifies the ITS message type for LTE-V2X emission. This string can be used
+		for example in the MQTT topic if MQTT protocol is used for the LTE-V2X emission.
+		 	* mapmsgtype : The string that identifies the ITS message type for LTE-V2X emission. This string can be used
+		for example in the MQTT topic if MQTT protocol is used for the LTE-V2X emission.
+		-->
+		<ltev2x enable="false" spatmsgtype="spat" mapmsgtype="map" />
+
+		<!-- Parameters for the itssocket mechanism (reasonable defaults) -->
+		<socket map="gn+btp://cch:2003" spat="gn+btp://cch:2004" />
+
+		<!-- Standard reference and version to use -->
+		<standard reference="ETSI_TS_103301" version="2.1.1" />
+		<!-- <standard reference="ETSI_TS_103301" version="1.1.1" /> -->
+		<!-- <standard reference="SAE_J2735" version="2016" /> -->
+
+
+		<!-- Message emission parameters
+			interval: base interval for message emission (ms)
+		-->
+		<emission interval="1000" />
+
+		<!-- Sender Parameters
+			updateheader: Allow senders to update header of messages
+		-->
+		<sender updateheader="false"/>
+
+		<!-- List of signal groups -->
+		<!-- 	number of signal groups -->
+		<index size="0"/>
+		<!-- 	IDs of signal groups (starting from 1) -->
+		<!-- <signalgroup1 id="89" /> -->
+		<!-- <signalgroup2 id="111" /> -->
+		<!-- <signalgroup3 id="24" /> -->
+	</config>
+</configuration>

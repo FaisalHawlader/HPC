@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		PreserveClient
+		Connects to the PRESERVE V2X Security Subsystem (VSS)
+	-->
+	<service start="false" instance="0">PreserveClient</service>
+	<config>
+		<!-- Parameters for the pubsub and cache mechanism (reasonable defaults) -->
+		<pubsub publish_id="170" cache_id="3" cache_obj_id="1" />
+
+		<!--
+			PRESERVE V2X Security Subsystem (VSS)
+			address: address of the PRESERVE VSS Convergence Layer
+			port: port of the PRESERVE VSS Convergence Layer
+			modechangeport: UDP Connectless port, used to change the mode of the station
+		-->
+		<server address="127.0.0.1"
+		        port="8367"
+		        modechangeport="28001"/>
+
+		<!-- security mode available
+			number of available modes -->
+		<modes count="2" />
+
+		<!-- available modes -->
+		<mode1 name="user" />
+		<mode2 name="operator" />
+
+		<!-- current security mode -->
+		<mode current="user" />
+
+	</config>
+</configuration>

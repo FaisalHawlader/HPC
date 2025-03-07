@@ -1,0 +1,5 @@
+serinfo:1.0 driver revision:
+0: uart:IMX mmio:0x30860000 irq:35 tx:0 rx:0 DSR|CD
+1: uart:IMX mmio:0x30890000 irq:37 tx:11628 rx:0 RTS|DTR|DSR|CD
+2: uart:IMX mmio:0x30880000 irq:36 tx:0 rx:0 DSR|CD
+3: uart:IMX mmio:0x30A60000 irq:42 tx:0 rx:0 DSR|CD

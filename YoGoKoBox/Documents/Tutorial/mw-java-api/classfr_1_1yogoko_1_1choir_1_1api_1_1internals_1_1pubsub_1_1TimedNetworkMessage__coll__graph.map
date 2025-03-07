@@ -1,0 +1,7 @@
+<map id="fr.yogoko.choir.api.internals.pubsub.TimedNetworkMessage" name="fr.yogoko.choir.api.internals.pubsub.TimedNetworkMessage">
+<area shape="rect" id="node2" href="$classfr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1pubsub_1_1BasicNetworkMessage.html" title="fr.yogoko.choir.api.internals.pubsub.\lBasicNetworkMessage" alt="" coords="921,115,1172,156"/>
+<area shape="rect" id="node3" href="$interfacefr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1pubsub_1_1NetworkMessage.html" title="fr.yogoko.choir.api.internals.pubsub.\lNetworkMessage" alt="" coords="372,63,623,104"/>
+<area shape="rect" id="node4" href="$interfacefr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1pubsub_1_1AdaptiveMessage.html" title="fr.yogoko.choir.api.internals.pubsub.\lAdaptiveMessage" alt="" coords="5,21,256,63"/>
+<area shape="rect" id="node7" href="$interfacefr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1pubsub_1_1TimedMessage.html" title="fr.yogoko.choir.api.internals.pubsub.\lTimedMessage" alt="" coords="647,5,897,47"/>
+<area shape="rect" id="node5" href="$classfr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1pubsub_1_1Metadata.html" title="fr.yogoko.choir.api.internals.pubsub.\lMetadata" alt="" coords="372,128,623,169"/>
+</map>

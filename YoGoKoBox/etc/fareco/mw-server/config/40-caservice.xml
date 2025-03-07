@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		CaService
+		Provides support for ETSI CAM messaging
+	-->
+	<service start="true" instance="0">CaService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub senderid="61" outcam="22" incam="32" owncam="42" />
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache inCacheId="1" VDPCacheId="0" stationPropertiesId="3" pathhistorycacheid="9" />
+
+		<!-- Parameters for CAM emission on LTE-V2X media
+			* enable : Whether the LTE-V2X media should be use for CAM emission.
+			* msgtype : The string that identifies the ITS message type for LTE-V2X emission. This string can be used
+			    for example in the MQTT topic if MQTT protocol is used for the LTE-V2X emission.
+			* maxdistance : The distance (meters) between the current position of the ITS Station and the
+			    position included in the CAM previously transmitted to the WebSocket Server that
+			    once exceeds trigger a CAM emission through this module
+			* maxdelay : The delay (seconds) between the timestamp of the current CAM emitted by the ITS Station and the
+			    timestamp of the CAM previously transmitted through LTE-V2X media that, once exceeds, trigger a CAM
+			    emission through LTE-V2X media
+		-->
+		<ltev2x enable="false" msgtype="cam" maxdistance="1000" maxdelay="120"/>
+
+		<!-- Parameters for the itssocket mechanism (reasonable defaults) -->
+		<!-- <socket receiver="gn+btp://cch:2001" sender="gn+btp://cch:2001" /> -->
+		<!-- <socket receiver="gn+btp://cch:2001" sender="ip6+udp://[::1]:1234?reconnect=1" /> -->
+		<!-- <socket url="ip6+udp://[::1]:1234?reconnect=1" /> -->
+		<socket cam="gn+btp://cch:2001" />
+
+		<!-- Specific configuration for cam protocol (reasonable defaults) -->
+		<camparameters messageid="2" vehiclelengthconfind="0" />
+
+		<!-- Standard reference and version to use -->
+		<!-- <standard reference="ETSI_EN_302637-2" version="1.3.2" /> -->
+		<standard reference="ETSI_EN_302637-2" version="1.4.1" />
+
+		<!-- Reception control parameters
+			dropownmsgs: Whether the CaService should drop its own messages
+			    on reception
+		-->
+		<recvcontrol dropownmsgs="false"/>
+
+		<!-- Generation control parameters
+			generationcontrol: Whether the CaService should control
+			    generation frequency of CAM messages
+			genmaxinterval: Maximum generation interval of CAM messages (ms)
+			genmininterval: Minimum generation interval of CAM messages (ms)
+			genminintervaldcc: Minimum DCC generation interval of CAM
+			    messages (ms)
+			consecutivecam: Maximum consecutive CAM messages
+			lowfrequencycontrol: Whether the CaService should control
+			    inclusion of the lowFrequencyContainer on sent messages
+			genminintervallf: Minimum interval for inclusion of the
+			    lowFrequencyContainer in sent CAM messages (ms)
+			mitigationcontrol: Whether the CaService should apply CEN-DSRC
+			    mitigation on sent messages
+			mitigationinterval: Minimum generation interval of CAM messages
+			    when CEN-DSRC mitigation is active (ms)
+			trafficclass: Traffic class that represents Facility-layer
+			   requirements on packet transport
+		-->
+		<sendcontrol generationcontrol="true"
+		             genmaxinterval="100"
+		             genmininterval="100"
+		             genminintervaldcc="100"
+		             consecutivecam="3"
+		             lowfrequencycontrol="true"
+		             genminintervallf="100"
+		             mitigationcontrol="true"
+		             mitigationinterval="100"
+		             trafficclass="2" />
+
+		<!-- Security control parameters
+			signmessages: Whether sent CAM messages should be signed
+			securitycontrol: Whether the security service should control
+			    (lock) emission of CAM messages
+			aid: AID of CAM messages for sent and received messages
+		-->
+		<securityparameters signmessages="false"
+		                    securitycontrol="false"
+		                    aid="36" />
+
+		<!-- GN Lifetime parameter
+			value: lifetime to be included in GN messages
+
+			Lifetime is constructed as follow :
+			XXXXXXYY where XXXXXX is the multiplier
+			and YY is the base.
+			For example, 19 = 000100 11
+			It means 4 * 100s. The two last bits can
+			be :
+				00 : 50ms
+				01 : 1s
+				10 : 10s
+				11 : 100s
+
+			For CAM messages the value shall be
+			less than a second.
+		 -->
+		<lifetime value="40"/>
+
+
+		<!-- ProtectedZone for RSU container, included when stationType is RSU (15) -->
+		<!-- 	number of protected zones -->
+		<protectedzone index="0"/>
+		<!-- 	configuration of zone
+				type: type of the station. 0 = cenDsrcTolling
+				latitude: latitude of the station (deg)
+				longitude: longitude of the station (deg)
+				zoneid: ID of the zone
+				radius: radius of the zone - optional (m)
+				expiration: expiryTime (ITS time) of the zone -
+				    optional (s)
+		-->
+		<!--
+		<zone0 type="0"
+		       latitude="43.5512784"
+		       longitude="10.3002593"
+		       zoneid="1"
+		       radius="500"
+		       expiration="417381883" />
+		-->
+	</config>
+</configuration>

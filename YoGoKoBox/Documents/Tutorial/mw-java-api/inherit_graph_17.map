@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classfr_1_1yogoko_1_1choir_1_1internals_1_1config_1_1ConfigServiceImpl.html" title="fr.yogoko.choir.internals.config.\lConfigServiceImpl" alt="" coords="309,13,527,54"/>
+<area shape="rect" id="node3" href="$interfacefr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1cache_1_1CacheService.html" title="fr.yogoko.choir.api.internals.cache.\lCacheService" alt="" coords="9,122,252,163"/>
+<area shape="rect" id="node4" href="$classfr_1_1yogoko_1_1choir_1_1internals_1_1cache_1_1CacheServiceImpl.html" title="fr.yogoko.choir.internals.cache.\lCacheServiceImpl" alt="" coords="309,107,527,149"/>
+<area shape="rect" id="node5" href="$interfacefr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1ControlMessageListener.html" title="fr.yogoko.choir.api.internals.\lControlMessageListener" alt="" coords="31,57,231,98"/>
+<area shape="rect" id="node6" href="$classfr_1_1yogoko_1_1choir_1_1internals_1_1pubsub_1_1PubsubServiceImpl.html" title="fr.yogoko.choir.internals.pubsub.\lPubsubServiceImpl" alt="" coords="304,173,532,214"/>
+<area shape="rect" id="node7" href="$interfacefr_1_1yogoko_1_1choir_1_1api_1_1internals_1_1pubsub_1_1PubsubService.html" title="fr.yogoko.choir.api.internals.pubsub.\lPubsubService" alt="" coords="5,187,256,229"/>
+</map>

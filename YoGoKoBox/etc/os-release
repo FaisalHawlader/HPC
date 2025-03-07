@@ -1,0 +1,8 @@
+ID=fareco
+NAME="Fareco"
+VERSION="3.3.4 (hardknott)"
+VERSION_ID=3.3.4
+PRETTY_NAME="Fareco 3.3.4 (hardknott)"
+DISTRO_CODENAME="hardknott"
+IMAGE_ID=uevcut3-be
+IMAGE_VERSION=0.1.10

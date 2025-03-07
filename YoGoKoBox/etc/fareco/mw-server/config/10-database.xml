@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		Database service:
+		Subscribe to msgids and record data to a mongodb database
+	-->
+	<service start="false" instance="0">DatabaseService</service>
+	<config>
+		<!-- Database parameters
+			server: mongodb server uri
+			database: database name
+			applicationid: application ID of the collecter
+		-->
+		<database server="mongodb://127.0.0.1:27017"
+		          database="test"
+		          applicationid="10009" />
+
+		<!-- List of subscriptions -->
+		<!-- 	number of subscriptions -->
+		<index subscriptions="2"/>
+		<!-- 	configuration of subscriptions (starting from 1)
+				subscriptionid: message id to collect messages from
+				collection: mongodb collection to collect messages to
+				jsonOnly: whether messages are published under JSON format
+		-->
+		<subscription1 subscriptionid="32"
+		               collection="messages_20170203"
+		               jsonOnly="true" />
+		<subscription2 subscriptionid="35"
+		               collection="messages_20170203"
+		               jsonOnly="true" />
+	</config>
+</configuration>

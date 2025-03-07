@@ -1,0 +1,85 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            55:4b:2a:83:65:1e:5b:c1:26:86:30:29:22:90:ef:52
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=openvpn-fareco
+        Validity
+            Not Before: Sep  7 09:15:41 2023 GMT
+            Not After : Dec 10 09:15:41 2025 GMT
+        Subject: CN=YBOX-VEHI-2022-0FCDB1
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:cf:40:b0:ae:35:eb:ab:a8:b1:20:25:1a:b4:57:
+                    af:1e:a5:34:23:8d:69:20:5a:86:a1:6a:07:95:40:
+                    f8:0b:8e:81:96:a5:13:72:27:5a:ee:af:ca:c2:26:
+                    e5:af:96:49:20:3c:2d:c1:81:d0:d7:4b:b1:e9:0b:
+                    c1:a4:01:6e:96:d6:62:cb:c5:46:94:74:14:5d:13:
+                    64:18:17:4a:60:d2:5f:4a:ee:b4:67:24:ab:45:17:
+                    5e:86:a9:dc:b6:b1:07:8b:65:b2:bb:c1:d2:90:e4:
+                    30:76:a7:cb:be:36:3b:08:e6:f2:9f:84:df:8c:cd:
+                    e4:65:f1:ac:6b:73:60:f5:ca:c2:01:45:f6:1f:44:
+                    16:fa:5e:db:58:98:b8:a4:bd:f7:49:da:97:e2:95:
+                    e3:50:a4:6a:d6:35:41:61:35:c7:c2:67:57:1f:ba:
+                    79:c6:33:92:e9:ff:2a:a0:f8:3a:ef:ca:52:e7:81:
+                    39:ce:59:ee:ec:95:28:47:a7:5a:3a:9d:a8:6b:04:
+                    9c:e9:4b:ee:f9:f3:21:d2:50:28:33:03:e3:03:dc:
+                    ec:ff:02:ec:54:f2:64:ac:ad:ae:bb:c4:08:43:20:
+                    0b:2f:53:01:01:e1:69:e0:45:b1:e1:42:a0:3d:23:
+                    69:95:08:4a:0b:60:25:79:de:4a:15:78:06:cc:03:
+                    e9:b9
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                74:48:1D:1C:DD:3C:87:99:30:15:3B:97:C1:71:0D:6B:69:7F:46:0B
+            X509v3 Authority Key Identifier: 
+                keyid:0F:91:12:95:C7:12:79:A7:74:10:48:97:8A:37:BF:C1:0E:84:B6:F6
+                DirName:/CN=openvpn-fareco
+                serial:39:DC:69:12:FD:8C:BA:D3:A1:CF:2B:4B:91:81:F5:AD:12:82:A4:20
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         65:aa:45:b9:2c:9f:a3:c9:ec:4b:c3:2d:c7:13:9f:0e:eb:df:
+         0d:ce:2a:01:c4:09:ed:14:41:60:34:b5:cd:f4:bb:9b:57:ff:
+         00:e1:f3:3f:10:c1:19:05:5e:35:4f:9b:55:29:72:ab:db:09:
+         02:83:f4:cb:bb:34:e3:3e:16:41:51:7e:6e:78:5b:01:b8:e0:
+         9f:ce:14:5f:88:8a:ff:41:b0:ee:25:6d:db:3f:c9:0d:03:fc:
+         bc:48:38:e0:a0:1c:e3:ee:d3:ee:07:2a:04:93:65:9d:80:73:
+         cf:7e:83:61:c1:60:70:d2:98:b9:b0:3b:70:0b:df:50:4e:11:
+         78:51:90:c0:6f:4e:eb:a1:c1:8b:52:58:a0:c4:8c:07:03:dd:
+         8b:7f:e8:0d:39:5e:2c:23:04:05:fa:75:91:65:e7:61:63:af:
+         6f:c6:f5:9b:b6:70:1a:2a:db:25:95:e2:4d:99:4a:19:3b:7b:
+         98:ec:7a:ab:b4:51:1b:da:f7:6c:04:e7:29:bd:1d:5b:98:d6:
+         85:51:15:33:ff:af:06:8c:08:aa:64:5b:2c:0c:d1:a1:71:ef:
+         45:99:06:33:15:06:69:5b:de:58:4d:7e:cc:3a:43:25:28:61:
+         df:9d:e8:98:69:92:04:a5:76:26:29:59:33:66:7a:41:fc:06:
+         03:c8:eb:17
+-----BEGIN CERTIFICATE-----
+MIIDaTCCAlGgAwIBAgIQVUsqg2UeW8EmhjApIpDvUjANBgkqhkiG9w0BAQsFADAZ
+MRcwFQYDVQQDDA5vcGVudnBuLWZhcmVjbzAeFw0yMzA5MDcwOTE1NDFaFw0yNTEy
+MTAwOTE1NDFaMCAxHjAcBgNVBAMMFVlCT1gtVkVISS0yMDIyLTBGQ0RCMTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM9AsK4166uosSAlGrRXrx6lNCON
+aSBahqFqB5VA+AuOgZalE3InWu6vysIm5a+WSSA8LcGB0NdLsekLwaQBbpbWYsvF
+RpR0FF0TZBgXSmDSX0rutGckq0UXXoap3LaxB4tlsrvB0pDkMHany742Owjm8p+E
+34zN5GXxrGtzYPXKwgFF9h9EFvpe21iYuKS990nal+KV41CkatY1QWE1x8JnVx+6
+ecYzkun/KqD4Ou/KUueBOc5Z7uyVKEenWjqdqGsEnOlL7vnzIdJQKDMD4wPc7P8C
+7FTyZKytrrvECEMgCy9TAQHhaeBFseFCoD0jaZUISgtgJXneShV4BswD6bkCAwEA
+AaOBpTCBojAJBgNVHRMEAjAAMB0GA1UdDgQWBBR0SB0c3TyHmTAVO5fBcQ1raX9G
+CzBUBgNVHSMETTBLgBQPkRKVxxJ5p3QQSJeKN7/BDoS29qEdpBswGTEXMBUGA1UE
+AwwOb3BlbnZwbi1mYXJlY2+CFDncaRL9jLrToc8rS5GB9a0SgqQgMBMGA1UdJQQM
+MAoGCCsGAQUFBwMCMAsGA1UdDwQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAZapF
+uSyfo8nsS8MtxxOfDuvfDc4qAcQJ7RRBYDS1zfS7m1f/AOHzPxDBGQVeNU+bVSly
+q9sJAoP0y7s04z4WQVF+bnhbAbjgn84UX4iK/0Gw7iVt2z/JDQP8vEg44KAc4+7T
+7gcqBJNlnYBzz36DYcFgcNKYubA7cAvfUE4ReFGQwG9O66HBi1JYoMSMBwPdi3/o
+DTleLCMEBfp1kWXnYWOvb8b1m7ZwGirbJZXiTZlKGTt7mOx6q7RRG9r3bATnKb0d
+W5jWhVEVM/+vBowIqmRbLAzRoXHvRZkGMxUGaVveWE1+zDpDJShh353omGmSBKV2
+JilZM2Z6QfwGA8jrFw==
+-----END CERTIFICATE-----

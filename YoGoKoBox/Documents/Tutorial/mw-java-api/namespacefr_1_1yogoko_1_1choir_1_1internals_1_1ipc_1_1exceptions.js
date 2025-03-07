@@ -1,0 +1,6 @@
+var namespacefr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions =
+[
+    [ "ChoirAlreadyConnectedException", "classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirAlreadyConnectedException.html", "classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirAlreadyConnectedException" ],
+    [ "ChoirNetworkConnectionException", "classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirNetworkConnectionException.html", "classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirNetworkConnectionException" ],
+    [ "ChoirServerConnectionException", "classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirServerConnectionException.html", "classfr_1_1yogoko_1_1choir_1_1internals_1_1ipc_1_1exceptions_1_1ChoirServerConnectionException" ]
+];

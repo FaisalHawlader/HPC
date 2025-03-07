@@ -1,0 +1,1 @@
+python3 iris_singularity_tools.py docker-convert --source=registry --tag zhyever/mmdetection3d:latest --sif-path /work/projects/360lab/wons2025/mmdetect3d.sif

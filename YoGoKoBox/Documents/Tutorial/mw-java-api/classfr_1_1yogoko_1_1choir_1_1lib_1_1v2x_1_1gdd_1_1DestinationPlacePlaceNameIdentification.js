@@ -1,0 +1,4 @@
+var classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1gdd_1_1DestinationPlacePlaceNameIdentification =
+[
+    [ "DestinationPlacePlaceNameIdentification", "classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1gdd_1_1DestinationPlacePlaceNameIdentification.html#a1919787e4c631fbd5e62b44824b7849d", null ]
+];

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">Pvt</service>
+	<config>
+		<!-- Message Id for choir protocol-->
+		<choir applicationid="20"
+		       vdpcacheid="0" />
+
+		<!-- General configuration of the Pvt Service
+			recomputeinterval: Interval to recompute the list of active sources when sources time out (ms)
+		-->
+		<pvtconfig recomputeinterval="2000" />
+
+		<!-- List of sources (starting from 1)
+			enabled: Whether this source is enabled
+			profile: Profile of the source (autotalks/gpsd/native/time/user)
+			name: Name of the source (for display)
+			feedmsgid: Message ID to get data from
+			timeout: Timeout to deprecate this source
+			fields: Comma-separated list of fields to get from this source
+			        (time/ls2004/latlon/alt/speed/heading/climb)
+			filtermode: Ignore messages whose GNSS mode is below filtermode
+			fixspeedresetheadingthreshold: Reset heading if speed is below this value
+			fixspeedupdateheadingthreshold: Update heading if speed is over this value
+		-->
+		<sources count="7" />
+
+		<!-- The following comments describe the purpose of each pre-configured source -->
+
+		<!--
+		        userdata: positioning data provided by the user
+		               (e.g. gps traces, external software, etc)
+		                No timeout is set because we want user input to last forever.
+		                Once the source is enabled and a fix has been received, it
+		                will stay as is until the source is disabled
+		-->
+		<source1 profile="user"
+		         name="userdata"
+		         enabled="false"
+		         feedmsgid="203"
+		         timeout="-1"
+		         filtermode="0" />
+
+		<!--
+		        recorder: positioning data provided when replaying a record
+		                Not used yet, will be in a future version
+		-->
+		<source2 profile="native"
+		         name="recorder"
+		         enabled="false"
+		         feedmsgid="204"
+		         timeout="5000" />
+
+		<!--
+		        autotalksprovider: positioning data provided by the Autotalks GNSS
+		                The field filtermode is set to 2 because time informations
+		                provided by Autotalks API are not accurate below mode 2.
+		                Fields fixspeedresetheadingthreshold and fixspeedupdateheadingthreshold
+		                are set because the heading is unaccurate at low speed.
+		                Needs to have the position service enabled in Autotalks.
+		-->
+		<source3 profile="autotalks"
+		         name="autotalksprovider"
+		         enabled="true"
+		         feedmsgid="201"
+		         timeout="2000"
+		         filtermode="3"
+		         fixspeedresetheadingthreshold="1.0"
+		         fixspeedupdateheadingthreshold="2.0" />
+
+		<!-- staticprovider: static provision of leap seconds
+		                Provide leap seconds since 2004 from static configuration
+		                when the Autotalks chipset is not available. This is get
+		                from the staticprovider, but with fields limited to ls2004.
+		                Must be placed before gpsprovider and ntpprovider to make
+		                sure these modules will have leap seconds defined when
+		                performing time calculations. Otherwise, time calculations
+		                will be done with leap seconds set to 0.
+		                Needs to have the staticprovider service enabled.
+		-->
+		<source4 profile="native"
+		         name="staticprovider"
+		         enabled="true"
+		         feedmsgid="206"
+		         timeout="-1"
+		         fields="ls2004" />
+
+		<!-- gpsprovider: positioning data provided by a GPSD daemon
+		                May be used if the hardware platform embeds a GNSS chipset
+		                supported by GPSD. May also be used to connect to an external
+		                GPSD server (for example for testing purpose).
+		                Needs to have the gpsprovider service enabled.
+		-->
+		<source5 profile="gpsd"
+		         name="gpsprovider"
+		         enabled="true"
+		         feedmsgid="205"
+		         timeout="2000" />
+
+		<!-- ntpprovider: timing data provided from a NTP server
+		                May be used to retrieve the time information when no GNSS
+		                data is available.
+		                A timeout is set at a quite long time (30 minutes), however
+		                it is not really important since this is the last source for
+		                time data.
+		                Needs to have the ntpprovider service enabled.
+		-->
+		<source6 profile="time"
+		         name="ntpprovider"
+		         enabled="false"
+		         feedmsgid="207"
+		         timeout="1800000" />
+
+		<!-- staticprovider: static positioning data
+		                May be used to define a static position for the ITS Station.
+		                It is put as the last module since one may want to use it as
+		                a fallback when other sources are unavailable. One may want
+		                to put it as the first source in order to overload every
+		                other sources.
+		                Note that the feedmsgid is not defined as the staticprovider
+		                is already present before in the list. There shall not be the
+		                same feedmsgid declared several times in the configuration.
+		                Needs to have the staticprovider service enabled.
+		-->
+		<source7 profile="native"
+		         name="staticprovider"
+		         enabled="true"
+		         timeout="-1" />
+		         <!-- feedmsgid="206" -->
+	</config>
+</configuration>

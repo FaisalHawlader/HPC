@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		TrafficLight
+		Virtual traffic light, configured with a static matrix
+	-->
+	<service start="false" instance="0">TrafficLight</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub configspat="54"/>
+
+		<!-- Reference position of the intersection
+			latitude: latitude of the intersection
+			longitude: longitude of the intersection
+			altitude: altitude of the intersection
+		-->
+		<position latitude="48.1350568"
+		          longitude="-1.6221928"
+		          altitude="0" />
+
+		<!-- Traffic lights matrix and lanes
+			lanes: number of lanes
+			trafficlights: number of traffic light
+		-->
+		<index lanes="4" trafficlights="2"/>
+
+		<!-- 	configuration of lanes (starting from 0)
+				id: id of the lane
+				ingress: whether the lane allows traffic from outside to the intersection
+				egress: whether the lane allows traffic from the intersection to outside
+				signalgroup: signalgroup associated to this lane (if ingress)
+				nodex: coordinates of the lane (m)
+		-->
+		<lane0 id="1" ingress="true" signalgroup="89"
+		       node1="-80;-90" node2="-100;-120" />
+		<lane1 id="2" egress="true"
+		       node1="30;20" node2="50;40" />
+		<lane2 id="3" ingress="true" signalgroup="89"
+		       node1="70;-90" node2="100;-120" />
+		<lane3 id="4" egress="true"
+		       node1="-60;40" node2="-80;60" />
+
+		<!-- 	configuration of traffic lights (starting from 0)
+				signalgroup: id of the signalgroup
+				length: number of states
+				tx: duration of the phase x (s)
+				sx: the state of the phase x (according to J2735)
+		-->
+		<traffic0 signalgroup="89" length="3"
+		          t0="32" t1="26" t2="2" s0="3" s1="6" s2="7"/>
+		<traffic1 signalgroup="111" length="3"
+		          t0="26" t1="2" t2="32" s0="6" s1="7" s2="3"/>
+	</config>
+</configuration>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">StaticProvider</service>
+	<config>
+		<!-- Message Id for choir protocol-->
+		<choir messageid="206" />
+
+		<!-- Configuration for static position
+			latitude: static latitude of the station (deg)
+			longitude: static longitude of the station (deg)
+			altitude: static altitude of the station (m)
+			speed: static speed of the station (m/s)
+			heading: static heading of the station (deg)
+			climb: static horizontal speed of the station (m/s)
+			ls2004: current leep seconds since 2004
+			posmajoraxisdirection: static direction of positioning error (deg)
+			possemimajoraxiserror: static semi major axis positioning error
+			possemiminoraxiserror: static semi minor axis positioning error
+			altitudeerror: static altitude error (m)
+			speederror: static speed error (m/s)
+			headingerror: static heading error (deg)
+			climberror: static horizontal speed error (m/s)
+		-->
+		<staticposition latitude="48.1289784"
+		                longitude="-1.5190593"
+		                altitude="182"
+		                speed="1.4"
+		                heading="189.2"
+		                climb="0"
+		                ls2004="5" />
+
+	</config>
+</configuration>

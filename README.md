@@ -48,6 +48,7 @@ Our script covers all these steps for you, you only need to build your Docker im
 ```bash
 ./iris_singularity_tools.py docker-convert --tag <tag> --sif-path /path/on/iris/for/image.sif
 ```
+## python3 ./iris_singularity_tools.py docker-convert --tag ubix/cv2x-vnc2024:latest --sif-path /home/users/fahawlader/cv2x.sif
 
 You can also use the same subcommand to convert an existing image from an online registry like DockerHub.
 

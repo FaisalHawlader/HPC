@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		LdmService
+		Provides a Local Dynamic Map built with messages received from the
+		V2X network.
+	-->
+	<service start="true" instance="0">LdmService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub camreceiverid="90"  incam="32" owncam="42"
+		                            inbsm="121" ownbsm="141"
+		        denmreceiverid="94" indenm="45" owndenm="65"
+		        spatreceiverid="89" inspat="24" inmap="23" ownspat="44" ownmap="43"
+		        ivireceiverid="95"  inivi="37" ownivi="67" />
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache ldmcamcacheid="10"
+		       ldmeventcacheid="11"
+		       ldmtlcacheid="12"
+		       ldmprotectedcacheid="13"
+		       ldmsigncacheid="14"
+		       vdpcacheid="0" />
+
+		<!-- Parameters for station cache
+			enable: Whether LdmStations should be enabled
+			maxdistance: distance for filtering ITS Stations
+			enableradiopower : weither or not radiopower in ldm is get from radio layer
+			radioprovider: radio layer to request (autotalks-cr1 or autotalks-cr2)
+		-->
+		<station enable="true"
+		         maxdistance="10000"
+		         enableradiopower="false"
+		         radioprovider="autotalks-cr2"/> 
+
+		<!-- Parameters for events cache
+			enable: Whether LdmEvents should be enabled
+			maxdistance: distance for filtering events
+			relevancedistance: distance for considering events as non-relevant (m)
+			relevancedistancefromtrace: distance from trace for considering
+			    events as non-relevant (m)
+			relevanceheading: angle between event direction and vehicle direction
+			    over which the event should be considered as non-relevant (deg)
+			relevancedistancenoheading: distance below which relevanceheading
+			    calculations should be bypassed (m)
+		-->
+		<event enable="true"
+		       maxdistance="2000"
+		       relevancedistance="1000"
+		       relevancedistancefromtrace="20"
+		       relevanceheading="45"
+		       relevancedistancenoheading="40"
+		       enableprotocollogic="false" />
+
+		<!-- Parameters for trafficlights cache
+			enable: Whether LdmTrafficLights should be enabled
+			maxdistance: distance for filtering traffic lights
+			relevancedistance: distance for considering traffic lights as non-relevant
+			lanerelevancedistance: distance from lane for considering the vehicle to be in a lane
+		-->
+		<trafficlight enable="true"
+		              maxdistance="1000"
+		              relevancedistance="200"
+		              lanerelevancedistance="5"
+		              ignoremapforsgprocessing="false"
+		              removeeventsonfailureflash="false"
+		              removeeventsonfailuremode="false"
+		              removeeventsontlcoff="false" />
+
+		<!-- Parameters for signs cache
+			enable: Whether LdmSignages should be enabled
+			maxdistance: distance for filtering signages
+			relevancedistance: distance for considering signs as non-relevant
+			relevancedistancefromtrace: distance from zone for considering
+			    the vehicle to be in zone (m)
+			relevanceanglefromtrace: angle between zone heading and vehicle direction heading
+			    for considering the vehicle to be in the same direction than the zone (deg)
+		-->
+		<signage enable="true"
+		         maxdistance="1000"
+		         relevancedistance="200"
+		         relevancedistancefromtrace="20"
+		         relevanceanglefromtrace="20.0"
+		         enableprotocollogic="false" />
+
+		<!-- Parameters for LdmStations process
+			frequency: interval between two refresh (ms)
+			timeout: expiration of data (ms)
+		-->
+		<camrelevance frequency="100"
+		              timeout="2000"/>
+
+		<!-- Parameters for LdmEvents process
+			frequency: interval between two refresh (ms)
+		-->
+		<denmrelevance frequency="500" />
+
+		<!-- Parameters for LdmTrafficLights process
+			frequency: interval between two refresh (ms)
+			timeout: expiration of data (ms)
+		-->
+		<spatmaprelevance frequency="100"
+		                  timeout="2000"/>
+
+		<!-- Parameters for LdmSignages process
+			frequency: interval between two refresh (ms)
+		-->
+		<ivirelevance frequency="500" />
+	</config>
+</configuration>

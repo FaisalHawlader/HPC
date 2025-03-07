@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="true" instance="0">AutotalksCr2CV2X</service>
+	<config>
+
+<!--
+	Warning: This configuration file is a preliminary version for support
+	of C-V2X communications. The content of this configuration file and
+	parameters supported by the C-V2X service are subject to significant
+	changes, as C-V2X service is not finalised.
+-->
+
+		<!-- Configuration for the V2X link
+			enabled: Whether to enable or disable the link (boolean)
+			frequency: Frequency to operate on (integer)
+			           Set it according to the RRC config
+			traffictype: Type of traffic (non-ip/ip)
+			             ip mode is non supported
+			familyid: V2X messages family (ieee1609/iso/etsi)
+			pppp: 3GPP PPPP setting (integer)
+			srcl2id: Source 3GPP Layer2 ID (integer)
+			         Use an integer value converted from the hexadecimal value
+			         Set it to a distinct value for each unit
+			dstl2id: Destination 3GPP Layer2 ID (integer)
+			         Use an integer value converted from the hexadecimal value
+			         In most case, keeping the default broadcast address is appropriate
+			forcedestaddrtobroadcast:
+			         Override destination address in RX traffic to broadcast (boolean)
+		-->
+		<v2x_link_0 enabled="1"
+		            frequency="5920"
+		            traffictype="non-ip"
+		            familyid="etsi"
+		            pppp="0"
+		            srcl2id="11259313"
+		/>
+
+		<!-- Configuration for the V2X bridge, keep default values -->
+		<bridge0 enabled="1"
+		         rxport="500"
+		         txport="501" />
+
+		<!-- Configuration for SPS sockets, to be used for specific 3GPP tests
+			 enabled: Whether to enable or disable the socket (boolean)
+			 pppp: 3GPP PPPP setting (integer)
+			 spsinterval: 3GPP SPS Interval in MS (integer)
+			 spssize: 3GPP SPS Size (integer)
+		-->
+		<sockets count="0" />
+		<!--
+		<socket1 enabled="false"
+		         pppp="3"
+		         spsinterval="100"
+		         spssize="283" />
+
+		<socket2 enabled="false"
+		         pppp="5"
+		         spsinterval="200"
+		         spssize="283" />
+		-->
+
+        </config>
+</configuration>

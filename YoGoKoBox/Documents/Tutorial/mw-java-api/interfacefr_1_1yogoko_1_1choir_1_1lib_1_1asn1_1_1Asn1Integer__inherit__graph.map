@@ -1,0 +1,19 @@
+<map id="fr.yogoko.choir.lib.asn1.Asn1Integer" name="fr.yogoko.choir.lib.asn1.Asn1Integer">
+<area shape="rect" id="node3" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1asn1_1_1Asn1IntegerImpl.html" title="fr.yogoko.choir.lib.asn1.\lAsn1IntegerImpl" alt="" coords="452,332,623,373"/>
+<area shape="rect" id="node15" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd_1_1Latitude.html" title="fr.yogoko.choir.lib.v2x.cdd.\lLatitude" alt="" coords="443,71,632,112"/>
+<area shape="rect" id="node16" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd_1_1Longitude.html" title="fr.yogoko.choir.lib.v2x.cdd.\lLongitude" alt="" coords="443,201,632,243"/>
+<area shape="rect" id="node17" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd_1_1SpeedConfidence.html" title="fr.yogoko.choir.lib.v2x.cdd.\lSpeedConfidence" alt="" coords="443,463,632,504"/>
+<area shape="rect" id="node18" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd_1_1StationID.html" title="fr.yogoko.choir.lib.v2x.cdd.\lStationID" alt="" coords="443,593,632,635"/>
+<area shape="rect" id="node2" href="$interfacefr_1_1yogoko_1_1choir_1_1lib_1_1asn1_1_1ASN1Component.html" title="fr.yogoko.choir.lib.asn1.\lASN1Component" alt="" coords="5,332,176,373"/>
+<area shape="rect" id="node4" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v1_1_1Latitude.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v1.Latitude" alt="" coords="729,71,914,112"/>
+<area shape="rect" id="node5" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v1_1_1Longitude.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v1.Longitude" alt="" coords="729,201,914,243"/>
+<area shape="rect" id="node6" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v1_1_1SpeedConfidence.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v1.SpeedConfidence" alt="" coords="729,528,914,569"/>
+<area shape="rect" id="node7" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v1_1_1StationID.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v1.StationID" alt="" coords="729,659,914,700"/>
+<area shape="rect" id="node8" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v2_1_1Latitude.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v2.Latitude" alt="" coords="729,5,914,47"/>
+<area shape="rect" id="node9" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v2_1_1Longitude.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v2.Longitude" alt="" coords="729,136,914,177"/>
+<area shape="rect" id="node10" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v2_1_1SpeedConfidence.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v2.SpeedConfidence" alt="" coords="729,463,914,504"/>
+<area shape="rect" id="node11" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1cdd__v2_1_1StationID.html" title="fr.yogoko.choir.lib.v2x.cdd\l_v2.StationID" alt="" coords="729,593,914,635"/>
+<area shape="rect" id="node12" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1erivdm_1_1Iso3833VehicleType.html" title="fr.yogoko.choir.lib.v2x.erivdm.\lIso3833VehicleType" alt="" coords="716,267,927,308"/>
+<area shape="rect" id="node13" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1gdd_1_1DestinationPlacePlaceNameIdentification.html" title="fr.yogoko.choir.lib.v2x.gdd.\lDestinationPlacePlaceNameIdentification" alt="" coords="680,332,963,373"/>
+<area shape="rect" id="node14" href="$classfr_1_1yogoko_1_1choir_1_1lib_1_1v2x_1_1ivi__v1_1_1DestinationPlacePlnId.html" title="fr.yogoko.choir.lib.v2x.ivi\l_v1.DestinationPlacePlnId" alt="" coords="729,397,914,439"/>
+</map>

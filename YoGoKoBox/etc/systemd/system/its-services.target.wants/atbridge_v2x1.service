@@ -1,0 +1,15 @@
+[Unit]
+Description=Bridge to 802.11p radio gateway
+After=its-services-pre.target network.target
+Requires=network.target
+PartOf=its-services.target
+
+[Service]
+EnvironmentFile=-/etc/default/atbridge_v2x1
+ExecStart=/usr/bin/atbridge -i $INTERFACE -a $TARGET -s $TX_PORT -r $RX_PORT -d $CACHE_APPLICATION_ID -p $POWER_DBM -c $CACHE_ID -o $OBJECT_ID -n $DB_CACHE_ENTRY
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=its-services.target
+

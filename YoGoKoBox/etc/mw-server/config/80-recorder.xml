@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="false" instance="0">Recorder</service>
+	<config>
+		<choir applicationid="601" />
+
+		<database server="mongodb://127.0.0.1:27017" dbname="records" />
+
+		<msgids count="10" />
+		<msgid1 id="201" />
+		<msgid2 id="32" />  <!-- incam -->
+		<msgid3 id="42" />  <!-- owncam -->
+		<msgid4 id="45" />  <!-- indenm -->
+		<msgid5 id="65" />  <!-- owndenm -->
+		<msgid6 id="37" />  <!-- inivi -->
+		<msgid7 id="24" />  <!-- inspat -->
+		<msgid8 id="44" />  <!-- ownspat -->
+		<msgid9 id="23" />  <!-- inmap -->
+		<msgid10 id="43" /> <!-- ownmap -->
+	</config>
+</configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="false" instance="0">GpsProvider</service>
+	<config>
+		<!-- Message Id for choir protocol-->
+		<choir messageid="204" />
+
+		<!-- Configuration for gps provider
+			address: address of the GPSD server
+			port: port of the GPSD server
+			retryinterval: interval for connection attempts
+		-->
+		<gpsserver address="127.0.0.1"
+		           port="2947"
+		           retryinterval="3000" />
+	</config>
+</configuration>

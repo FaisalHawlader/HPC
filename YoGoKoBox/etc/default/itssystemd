@@ -1,0 +1,19 @@
+# Settings for itssystemd
+
+# Choir parameters
+# CHOIR_SERVER:   Connection URL to the Middleware
+# APPLICATION_ID: Application ID to use for connection
+# VDP_CACHE_ID:   Cache ID to get information from
+# VDP_OBJECT_ID:  Object ID to get information from
+CHOIR_SERVER="tcp://127.0.0.1:49154"
+APPLICATION_ID=301
+VDP_CACHE_ID=0
+VDP_OBJECT_ID=1
+
+# GPSD_PORT: Port to bind the gpsd server to
+GPSD_PORT=2948
+
+# OPTIONS: Options to pass to the daemon
+# -t: Enable time
+# -g: Enable gps
+OPTIONS="-t -g -w"

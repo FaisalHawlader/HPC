@@ -1,0 +1,8 @@
+[Match]
+Name=v2x0
+
+[Link]
+MACAddress=76:6f:f7:ff:ee:dd
+
+[Network]
+Address=169.254.11.3/32

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		V2XAdapter
+		Establish a binding between pubsub msgids and itssockets.
+		This service is not used by facilities but may be used by clients
+		that cannot open itssockets.
+	-->
+	<service start="false" instance="0">V2XAdapter</service>
+	<config>
+		<!-- List of V2X adapters -->
+		<!-- 	number of senders and receivers -->
+		<index sender="0" receiver="0"/>
+
+		<!-- 	receiver parameter port and choir message id -->
+		<!-- <receiver1 port="2001" publish="12" /> --> <!-- cam -->
+		<!-- <receiver2 iface="v2x1" address="ff02::2fb" port="2008" publish="18" /> -->
+
+		<!-- 	sender parameter port, choir message id and application id -->
+		<!-- <sender1 port="2001" subscribe="2" appid="2001" msgtype="16"/> --> <!-- cam -->
+		<!-- <sender2 iface="v2x1" address="ff02::2fb" port="2008" subscribe="8" appid="2008" msgtype="16"/> -->
+	</config>
+</configuration>

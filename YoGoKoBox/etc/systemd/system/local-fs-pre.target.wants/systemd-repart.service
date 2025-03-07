@@ -1,0 +1,24 @@
+[Unit]
+Description=Repartition Root Disk
+Documentation=man:systemd-repart.service(8)
+DefaultDependencies=no
+Conflicts=shutdown.target
+Requires=dev-mmcblk2.device
+After=dev-mmcblk2.device
+Before=local-fs.target shutdown.target
+ConditionVirtualization=!container
+ConditionDirectoryNotEmpty=|/usr/lib/repart.d
+ConditionDirectoryNotEmpty=|/usr/local/lib/repart.d
+ConditionDirectoryNotEmpty=|/etc/repart.d
+ConditionDirectoryNotEmpty=|/run/repart.d
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/systemd-repart --dry-run=no
+
+# The tool returns 77 if there's no existing GPT partition table
+SuccessExitStatus=77
+
+[Install]
+WantedBy=local-fs-pre.target

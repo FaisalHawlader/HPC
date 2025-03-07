@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<service start="false" instance="0">NtpProvider</service>
+	<config>
+		<!-- Message Id for choir protocol-->
+		<choir messageid="207" />
+
+		<!-- Configuration for ntp provider
+			address: address of the NTP server
+			port: port of the NTP server
+			retryinterval: interval for connection attempts
+			requestinterval: interval between two requests
+		-->
+		<ntpserver address="0.pool.ntp.org"
+		           port="123" />
+	</config>
+</configuration>
+

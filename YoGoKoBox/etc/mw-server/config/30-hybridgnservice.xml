@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+        <!--
+                HybridGnService
+                Provides support for Hybrid messaging for SCOOP
+        -->
+        <service start="false" instance="0">HybridGnService</service>
+        <config>
+                <!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+                <pubsub appid="41867" sendmsgid="13" recvmsgid="14" />
+
+                <!-- Parameters for the socket to use
+                     * uri : server uri (ws://host[:port][/path]) to collect to. If host[:port] matches an alias
+                                 listed in 10-m2mservice.xml, the corresponding server information will
+                                 be used and the [/path] will be added to prefix path used in the alias.
+                -->
+                <socket uri="ws://127.0.0.1:80" />
+
+        </config>
+</configuration>

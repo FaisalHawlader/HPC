@@ -1,0 +1,19 @@
+[Unit]
+Description=Bind mount persistent /etc/systemd/network
+DefaultDependencies=false
+Before=local-fs.target
+After=data.mount
+RequiresMountsFor=/data /etc/systemd
+ConditionPathIsReadWrite=/data
+ConditionPathExists=/etc/systemd/network
+ConditionPathIsReadWrite=!/etc/systemd/network
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /data/etc_systemd_network /etc/systemd/network
+ExecStop=/bin/umount /etc/systemd/network
+
+[Install]
+WantedBy=local-fs.target

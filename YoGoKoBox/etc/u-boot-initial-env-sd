@@ -1,0 +1,37 @@
+bootcmd=for target in ${boot_targets}; do run bootcmd_${target}; done
+bootdelay=1
+baudrate=115200
+ethprime=eth0
+preboot=gsc wd-disable
+loadaddr=0x40480000
+arch=arm
+cpu=armv8
+board=venice
+board_name=venice
+vendor=gateworks
+soc=imx8m
+bootlimit=2
+altbootcmd=echo "### Upgrade failed ###"; setenv bootcount; setenv upgrade_available 3; run mmcswitch; run bootcmd
+loadimage=ext4load mmc ${mmcdev}:${mmcpart} ${kernel_addr} ${bootdir}/${image}
+loadfdt=ext4load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${bootdir}/${fdt_file}
+mmcdev=2
+mmcpart=1
+mmcswitch=echo "Switching from root${mmcpart}"; if test "${mmcpart}" = "1"; then setenv mmcpart 2; else setenv mmcpart 1; fi;saveenv
+mmcbootargs=setenv bootargs root=/dev/mmcblk${mmcdev}p${mmcpart} console=${console} systemd.machine_id=${machineid} panic=1 ro
+bootcmd_mmc=if test "${upgrade_available}" = "1"; then echo "### Upgrade detected ###"; if test "${bootcount}" = "1"; then run mmcswitch; fi; fi; run mmcbootargs; mmc dev ${mmcdev} ;if mmc rescan; then if run loadfdt && run loadimage; then booti ${kernel_addr} - ${fdt_addr}; else if test "${upgrade_available}" = "1"; then run altbootcmd; fi; fi; else echo ERROR: mmc not found; fi
+bootcmd_fastboot=usb start; echo Running fastboot...; fastboot usb 0
+boot_targets=mmc fastboot
+mmceraseenv=setexpr env_offset 0x200000 / 0x200; setexpr env_size 0x2000 / 0x200; setexpr env_size ${env_size} * 0x2; mmc dev 2 1; mmc erase ${env_offset} ${env_size}
+fdt_addr=0x44000000
+kernel_addr=0x42000000
+ramdisk_addr=0x46400000
+scriptaddr=0x46000000
+bootdir=/boot
+image=Image
+fdt_file=imx8mm-venice-gw73xx-0x.dtb
+ipaddr=192.168.1.22
+serverip=192.168.1.146
+preboot=gsc wd-disable
+console=ttymxc1,115200
+
+

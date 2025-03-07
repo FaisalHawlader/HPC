@@ -1,0 +1,6 @@
+[Unit]
+Description=YoGoKo ITS Services synchronization point
+Before=its-services.target
+
+[Install]
+WantedBy=its-services.target

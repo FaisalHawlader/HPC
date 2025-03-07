@@ -1,0 +1,2 @@
+SYSCONFDIR=${SYSCONFDIR:-/etc/ssh}
+SSHD_OPTS=

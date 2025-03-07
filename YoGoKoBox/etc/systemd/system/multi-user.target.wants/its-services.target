@@ -1,0 +1,7 @@
+[Unit]
+Description=YoGoKo ITS Services
+Requires=its-services-pre.target
+After=its-services-pre.target
+
+[Install]
+WantedBy=multi-user.target

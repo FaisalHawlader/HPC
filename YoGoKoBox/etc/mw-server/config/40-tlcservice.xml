@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		TlcService
+		Provides support for ETSI SREM and SSEM messaging
+	-->
+	<service start="true" instance="0">TlcService</service>
+	<config>
+		<!-- Parameters for the pubsub mechanism (reasonable defaults) -->
+		<pubsub sremsenderid="171" sremreceiverid="172" tlchandlerid="173" ssemsenderid="181" ssemreceiverid="182"
+		        insrem="124" outsrem="134" ownsrem="144" configsrem="154" inssem="123" outssem="133" ownssem="143" configssem="153"/>
+
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache id="185" vdpcacheid="0"/>
+
+		<!-- Parameters for the itssocket mechanism (reasonable defaults) -->
+		<socket srem="gn+btp://cch:2014" ssem="gn+btp://cch:2015" />
+
+		<!-- Specific configuration for tlc protocol (reasonable defaults) -->
+		<tlcparameters sremmessageid="9" ssemmessageid="10" />
+
+		<!-- Standard reference and version to use -->
+		<standard reference="ETSI_TS_103301" version="1.1.1" />
+
+		<recvcontrol dropownmsgs="false"/>
+
+		<securityparameters signmessages="false" securitycontrol="false" aid="123" />
+
+		<!-- <requestor role="2" subrole="4" request="5" /> -->
+
+	</config>
+</configuration>

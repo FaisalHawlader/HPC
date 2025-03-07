@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!--
+		RadioManagement
+		Manages radio parameters according to the situation of the C-ITS Station.
+	-->
+	<service start="true" instance="0">RadioManagement</service>
+	<config>
+		<!-- Parameters for the cache mechanism (reasonable defaults) -->
+		<cache propertiescacheid="30" propertiesobjectid="1" protectedzonecacheid="13" />
+
+		<!-- Parameters for the radio interfaces 1 or 2
+			provider: Provider for the radio interface (autotalks or atbridge)
+			identifier: Identifier of the radio interface (1 or 2 for autotalks,
+			            v2x0 or v2x1 for atbridge)
+			standardtxpower: TX power in normal (non DSRC-mitigated) mode
+			reducedtxpower: TX power in reduced (DSRC-mitigated) mode
+		-->
+		<radio1 provider="autotalks"
+		        identifier="1"
+		        standardtxpower="23"
+		        reducedtxpower="13" />
+
+		<radio2 provider="autotalks"
+		        identifier="2"
+		        standardtxpower="20"
+		        reducedtxpower="10" />
+
+		<!-- Mitigation parameters
+			enabled: Whether the mitigation mechanism should be enabled
+		-->
+		<mitigation enabled="false" />
+
+	</config>
+</configuration>
